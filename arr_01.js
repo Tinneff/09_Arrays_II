@@ -2,10 +2,23 @@
 
 // push() / pop()
 // push --> Daten rein ... (+)
+let arr = [];
 
+output(arr);
+arr.push("Ich");
+output(arr);
+arr.push("bin");
+output(arr);
+arr.push("Max");
+output(arr);
 
 // pop() --> Daten raus ... (-)
-
+output(arr.pop());
+output(arr);
+output(arr.pop());
+output(arr);
+output(arr.pop());
+output(arr);
 
 
 /*
@@ -34,15 +47,13 @@ const TAGS = [  "html",
 let stack = [];
 
 // Modul: HTML-Synthese | Test
-output(getHTML());
+// output(getHTML());
 function getHTML() {
   
     let htmlStr = "";
 
     for (let i = 0; i < TAGS.length; i++) {
-        if (condition) 
-        // if(true)
-        // if(false)
+        if (isOpenElement()) 
         {
             htmlStr += getElement(TAGS[i],"open");
         } else {
@@ -69,6 +80,9 @@ function getElement(tag,op) {
     }
 }
 
+function isOpenElement() {
+    return false;
+}
 
 
 

@@ -54,9 +54,9 @@ output(getElement(TAGS[1]));
 function getElement(tag,op) {
     switch (op) {
         case "open":
-            return "<" + tag + ">";
+            return CONTROLS[0] + tag + CONTROLS[2];
         case "close":
-            return "</" + tag + ">";
+            return CONTROLS[1] + tag + CONTROLS[2];
         default:
             return "ERROR";
     }

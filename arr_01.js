@@ -16,6 +16,7 @@ einer HTML-Seite ausgibt:
 Verwenden Sie dafür die untenstehenden Arrays
 */
 
+const ERR_STR   = "ERROR";
 const COBJ      = {open_o:"<",close_o:"</",close:">"}
 const CONTROLS  = ["<", "</", ">"];
 const TAGS = [  "html",
@@ -48,17 +49,17 @@ function getHTML() {
 
 
 // Modul: Zusammenbau der Elements: <tagStr> --> Tests:
-output(getElement(TAGS[1],"open"));
-output(getElement(TAGS[1],"close"));
-output(getElement(TAGS[1]));
+// output(getElement(TAGS[1],"open"));
+// output(getElement(TAGS[1],"close"));
+// output(getElement(TAGS[1]));
 function getElement(tag,op) {
     switch (op) {
         case "open":
-            return CONTROLS[0] + tag + CONTROLS[2];
+            return COBJ.open_o + tag + COBJ.close;
         case "close":
-            return CONTROLS[1] + tag + CONTROLS[2];
+            return COBJ.close_o + tag + COBJ.close;
         default:
-            return "ERROR";
+            return ERR_STR;
     }
 }
 

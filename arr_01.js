@@ -2,23 +2,23 @@
 
 // push() / pop()
 // push --> Daten rein ... (+)
-let arr = [];
+// let arr = [];
 
-output(arr);
-arr.push("Ich");
-output(arr);
-arr.push("bin");
-output(arr);
-arr.push("Max");
-output(arr);
+// output(arr);
+// arr.push("Ich");
+// output(arr);
+// arr.push("bin");
+// output(arr);
+// arr.push("Max");
+// output(arr);
 
-// pop() --> Daten raus ... (-)
-output(arr.pop());
-output(arr);
-output(arr.pop());
-output(arr);
-output(arr.pop());
-output(arr);
+// // pop() --> Daten raus ... (-)
+// output(arr.pop());
+// output(arr);
+// output(arr.pop());
+// output(arr);
+// output(arr.pop());
+// output(arr);
 
 
 /*
@@ -80,8 +80,23 @@ function getElement(tag,op) {
     }
 }
 
-function isOpenElement() {
-    return false;
+// Modul: Test auf open/close Tests:
+output(isOpenElement(TAGS[0]));
+output(isOpenElement(TAGS[1]));
+output(isOpenElement(TAGS[2]));
+function isOpenElement(tag) {
+    
+    let cond = (tag != stack[stack.length-1]);
+
+    if (cond) {
+        stack.push(tag);
+        output(stack);
+        return true;
+    } else {
+        stack.pop();
+        output(stack);
+        return false;
+    }
 }
 
 

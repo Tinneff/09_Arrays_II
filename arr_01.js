@@ -16,9 +16,10 @@ einer HTML-Seite ausgibt:
 Verwenden Sie dafür die untenstehenden Arrays
 */
 
-const cobj      = {open_o:"<",close_o:"</",close:">"}
-const controls  = ["<", "</", ">"];
-const tags = [  "html",
+const ERR_STR   = "ERROR";
+const COBJ      = {open_o:"<",close_o:"</",close:">"}
+const CONTROLS  = ["<", "</", ">"];
+const TAGS = [  "html",
 				"head","head",
 				"body",
                 "h1","h1",
@@ -33,15 +34,44 @@ const tags = [  "html",
 let stack = [];
 
 // Modul: HTML-Synthese | Test
-//output(getHTML());
+output(getHTML());
+function getHTML() {
+  
+    let htmlStr = "";
 
+    for (let i = 0; i < TAGS.length; i++) {
+        if (condition) 
+        // if(true)
+        // if(false)
+        {
+            htmlStr += getElement(TAGS[i],"open");
+        } else {
+            htmlStr += getElement(TAGS[i],"close");
+        }
+    }
 
+   return htmlStr;
+}
 
 
 // Modul: Zusammenbau der Elements: <tagStr> --> Tests:
-// output(getElement(tags[1],"open"));
-// output(getElement(tags[1],"close"));
-// output(getElement(tags[1]));
+// output(getElement(TAGS[1],"open"));
+// output(getElement(TAGS[1],"close"));
+// output(getElement(TAGS[1]));
+function getElement(tag,op) {
+    switch (op) {
+        case "open":
+            return COBJ.open_o + tag + COBJ.close;
+        case "close":
+            return COBJ.close_o + tag + COBJ.close;
+        default:
+            return ERR_STR;
+    }
+}
+
+
+
+
 
 
 // Modul: Ausgabe | Test

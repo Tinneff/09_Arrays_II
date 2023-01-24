@@ -34,14 +34,20 @@ const TAGS = [  "html",
 let stack = [];
 
 // Modul: HTML-Synthese | Test
-// output(getHTML());
+output(getHTML());
 function getHTML() {
   
     let htmlStr = "";
 
     for (let i = 0; i < TAGS.length; i++) {
-        // htmlStr += "</" + TAGS[i] + ">";
-        htmlStr += getElement();
+        if (condition) 
+        // if(true)
+        // if(false)
+        {
+            htmlStr += getElement(TAGS[i],"open");
+        } else {
+            htmlStr += getElement(TAGS[i],"close");
+        }
     }
 
    return htmlStr;
